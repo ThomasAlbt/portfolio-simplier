@@ -29,7 +29,8 @@ const Skills = () => {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 inline-flex items-center gap-3">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 flex items-center gap-3">
+            <span className="w-12 h-1 bg-emerald-accent"></span>
             COMPÉTENCES
           </h2>
           <p className="text-gray-400">

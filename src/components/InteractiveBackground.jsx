@@ -4,9 +4,8 @@ import { useEffect, useState } from 'react';
 const InteractiveBackground = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 1000], [0, -150]);
+  // Removed scroll-based transforms to prevent glitching
+
 
   useEffect(() => {
     const checkMobile = () => {
@@ -56,7 +55,8 @@ const InteractiveBackground = () => {
           repeat: Infinity,
           ease: "linear"
         }}
-        style={{ y: y1 }}
+        // style={{ y: y1 }} // Removed parallax
+
       />
       
       <motion.div 
@@ -71,7 +71,8 @@ const InteractiveBackground = () => {
           repeat: Infinity,
           ease: "linear"
         }}
-        style={{ y: y2 }}
+        // style={{ y: y2 }} // Removed parallax
+
       />
 
       {/* Mouse Follower (PC Only) */}
