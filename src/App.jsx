@@ -6,8 +6,34 @@ import Formation from './components/sections/Formation';
 import Projects from './components/sections/Projects';
 import Skills from './components/sections/Skills';
 import Contact from './components/sections/Contact';
+import { useEffect } from 'react';
+import Lenis from 'lenis';
 
 const App = () => {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <div className="min-h-screen text-white font-sans selection:bg-emerald-accent selection:text-deep-green overflow-x-hidden">
       <InteractiveBackground />
