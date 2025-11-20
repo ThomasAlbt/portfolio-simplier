@@ -37,7 +37,7 @@ const Navbar = () => {
             <CodeXml className="text-emerald-accent w-8 h-8" />
           </div>
           <span className="text-xl font-bold text-white tracking-tight group-hover:text-emerald-accent transition-colors">
-            THOMAS<span className="text-emerald-accent">.DEV</span>
+            THOMASALBERT<span className="text-emerald-accent">.DEV</span>
           </span>
         </a>
         

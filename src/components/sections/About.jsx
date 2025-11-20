@@ -22,27 +22,27 @@ const About = () => {
                 Je suis <strong className="text-white">Thomas Albert</strong>, un développeur Fullstack guidé par la performance et la précision. Mon approche du développement est façonnée par ma passion pour l'optimisation, que ce soit dans le code ou sur un circuit de F1.
               </p>
               <p>
-                Autodidacte rigoureux, j'ai construit ma stack technique autour de <span className="text-emerald-accent font-medium">React</span> et <span className="text-emerald-accent font-medium">PHP</span>, avec une attention particulière portée à la sécurité et à l'architecture logicielle.
+                Autodidacte rigoureux, j'ai construit ma stack technique autour de <span className="text-emerald-accent font-medium">React</span> et <span className="text-emerald-accent font-medium">Node.js</span>, avec une attention particulière portée à la sécurité et à l'architecture logicielle.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-                <div className="bg-forest-green/50 p-4 rounded-xl border border-emerald-accent/10 hover:border-emerald-accent/30 transition-colors">
+                <article className="bg-forest-green/50 p-4 rounded-xl border border-emerald-accent/10 hover:border-emerald-accent/30 transition-colors">
                   <Flag className="text-emerald-accent mb-2 w-6 h-6" />
                   <h4 className="font-bold text-white mb-1">Passion F1</h4>
                   <p className="text-sm text-gray-400">Fan de Ferrari & Data Viz</p>
-                </div>
-                <div className="bg-forest-green/50 p-4 rounded-xl border border-emerald-accent/10 hover:border-emerald-accent/30 transition-colors">
+                </article>
+                <article className="bg-forest-green/50 p-4 rounded-xl border border-emerald-accent/10 hover:border-emerald-accent/30 transition-colors">
                   <Cpu className="text-lime-accent mb-2 w-6 h-6" />
                   <h4 className="font-bold text-white mb-1">Optimisation</h4>
                   <p className="text-sm text-gray-400">Strategy & RPG Games</p>
-                </div>
+                </article>
               </div>
             </div>
           </div>
           
           <div className="relative group">
             <div className="absolute inset-0 bg-gradient-to-tr from-emerald-accent to-lime-accent rounded-2xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
-            <div className="relative bg-dark-black border border-gray-800 rounded-2xl p-8 overflow-hidden">
+            <article className="relative bg-dark-black border border-gray-800 rounded-2xl p-8 overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-20">
                 <Terminal className="w-32 h-32 text-white" />
               </div>
@@ -65,7 +65,7 @@ const About = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </article>
           </div>
         </motion.div>
       </div>

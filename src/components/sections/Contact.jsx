@@ -19,7 +19,7 @@ const Contact = () => {
               Je suis toujours partant pour discuter de projets innovants.
             </p>
 
-            <div className="space-y-6">
+            <address className="space-y-6 not-italic">
               <div className="flex items-center gap-4 text-gray-300">
                 <div className="w-12 h-12 rounded-full bg-emerald-accent/10 flex items-center justify-center text-emerald-accent">
                   <Mail className="w-5 h-5" />
@@ -41,7 +41,7 @@ const Contact = () => {
                   <p className="text-white">France</p>
                 </div>
               </div>
-            </div>
+            </address>
           </motion.div>
 
           <motion.form 
@@ -89,11 +89,11 @@ const Contact = () => {
           </motion.form>
         </div>
 
-        <div className="border-t border-white/5 mt-20 pt-8 text-center">
+        <footer className="border-t border-white/5 mt-20 pt-8 text-center">
           <p className="text-gray-500 text-sm">
             &copy; {new Date().getFullYear()} Thomas Albert. Built with React & Tailwind.
           </p>
-        </div>
+        </footer>
       </div>
     </section>
   );

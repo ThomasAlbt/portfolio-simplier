@@ -1,16 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { GraduationCap, ChevronDown, ChevronUp } from 'lucide-react';
+import { formationData } from '../../data/formation';
 
 const Formation = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-
-  const fullText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-  
-  Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?`;
-
+  const { fullText } = formationData;
   const truncatedText = fullText.substring(0, 150) + "...";
 
   return (
@@ -29,13 +24,13 @@ const Formation = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <motion.div
+          <motion.article
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="bg-forest-green/30 border border-emerald-accent/10 rounded-2xl p-8 relative overflow-hidden"
           >
-            <div className="flex items-center gap-4 mb-6">
+            <header className="flex items-center gap-4 mb-6">
               <div className="p-3 bg-emerald-accent/10 rounded-xl text-emerald-accent">
                 <GraduationCap className="w-8 h-8" />
               </div>
@@ -43,7 +38,7 @@ const Formation = () => {
                 <h3 className="text-xl font-bold text-white">Parcours Académique</h3>
                 <p className="text-emerald-accent text-sm font-medium">2020 - Présent</p>
               </div>
-            </div>
+            </header>
 
             <div className="text-gray-300 leading-relaxed relative">
               <AnimatePresence mode="wait">
@@ -75,7 +70,7 @@ const Formation = () => {
                 )}
               </button>
             </div>
-          </motion.div>
+          </motion.article>
 
           {/* Placeholder for certifications or other details */}
           <motion.div
@@ -85,14 +80,14 @@ const Formation = () => {
              transition={{ delay: 0.2 }}
              className="space-y-6"
           >
-            <div className="bg-black/40 border border-gray-800 p-6 rounded-xl hover:border-emerald-accent/30 transition-colors">
+            <article className="bg-black/40 border border-gray-800 p-6 rounded-xl hover:border-emerald-accent/30 transition-colors">
               <h4 className="text-lg font-bold text-white mb-2">Autodidacte Passionné</h4>
               <p className="text-gray-400 text-sm">
                 Apprentissage continu via documentation officielle, projets personnels et veille technologique active.
               </p>
-            </div>
+            </article>
             
-            <div className="bg-black/40 border border-gray-800 p-6 rounded-xl hover:border-emerald-accent/30 transition-colors">
+            <article className="bg-black/40 border border-gray-800 p-6 rounded-xl hover:border-emerald-accent/30 transition-colors">
               <h4 className="text-lg font-bold text-white mb-2">Certifications</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
@@ -100,7 +95,7 @@ const Formation = () => {
                   En cours d'acquisition...
                 </li>
               </ul>
-            </div>
+            </article>
           </motion.div>
         </div>
       </div>
