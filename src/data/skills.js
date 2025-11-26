@@ -1,19 +1,36 @@
-import { Layout, Database, Lock } from 'lucide-react';
+import { Layout, Database, Lock, Code, FileCode, Server, Globe, Cpu, Layers, GitBranch, Shield, Zap, Cloud, Palette, Terminal } from 'lucide-react';
 
 export const skillCategories = [
   {
     title: "Frontend",
     icon: Layout,
-    skills: ["React", "JavaScript", "TailwindCSS", "Framer Motion", "HTML5/CSS3"]
+    skills: [
+      { name: "React", icon: Code },
+      { name: "JavaScript", icon: FileCode },
+      { name: "TailwindCSS", icon: Palette },
+      { name: "Framer Motion", icon: Zap },
+      { name: "HTML5/CSS3", icon: Globe }
+    ]
   },
   {
     title: "Backend",
     icon: Database,
-    skills: ["PHP 8", "MySQL", "REST APIs", "Node.js Basics", "MVC Architecture"]
+    skills: [
+      { name: "PHP 8", icon: Server },
+      { name: "MySQL", icon: Database },
+      { name: "REST APIs", icon: Globe },
+      { name: "Node.js Basics", icon: Cpu },
+      { name: "MVC Architecture", icon: Layers }
+    ]
   },
   {
     title: "Tools & Security",
     icon: Lock,
-    skills: ["Git / GitHub", "Web Security", "VS Code", "Postman", "Vite"]
+    skills: [
+      { name: "Git / GitHub", icon: GitBranch },
+      { name: "Web Security", icon: Shield },
+      { name: "Vite", icon: Zap },
+      { name: "Netlify", icon: Cloud }
+    ]
   }
 ];

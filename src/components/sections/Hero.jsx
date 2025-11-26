@@ -1,9 +1,43 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Box, Circle, Triangle } from 'lucide-react';
+import Hero3D from './Hero3D';
+import { useState } from 'react';
 
 const Hero = () => {
+  const [shape, setShape] = useState('icosahedron');
+
+  const toggleShape = () => {
+    const shapes = ['icosahedron', 'torus', 'cube'];
+    const currentIndex = shapes.indexOf(shape);
+    const nextIndex = (currentIndex + 1) % shapes.length;
+    setShape(shapes[nextIndex]);
+  };
+
+  const getShapeIcon = () => {
+    switch (shape) {
+      case 'torus': return <Circle className="w-5 h-5" />;
+      case 'cube': return <Box className="w-5 h-5" />;
+      default: return <Triangle className="w-5 h-5" />;
+    }
+  };
+
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center relative pt-20">
+    <section className="min-h-screen flex flex-col justify-center items-center relative pt-20 overflow-hidden">
+      <Hero3D shape={shape} />
+      
+      {/* Shape Toggle Button (Desktop Only) */}
+      <div className="hidden md:block absolute top-32 right-10 z-20">
+        <motion.button
+          onClick={toggleShape}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="p-3 bg-white/5 backdrop-blur-sm border border-emerald-accent/20 rounded-full text-emerald-accent hover:bg-emerald-accent/10 transition-colors"
+          title="Changer la forme 3D"
+        >
+          {getShapeIcon()}
+        </motion.button>
+      </div>
+
       <div className="container mx-auto px-6 text-center z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,7 +62,7 @@ const Hero = () => {
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
             Je conçois des expériences numériques performantes et sécurisées.
             <br />
-            Expertise en <span className="text-white font-medium">React</span> & <span className="text-white font-medium">PHP</span>.
+            Expertise en <span className="text-white font-medium">React</span> & <span className="text-white font-medium">Node.js</span>.
           </p>
           
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center">

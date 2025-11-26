@@ -6,9 +6,10 @@ const Skills = () => {
     <section id="skills" className="py-20 relative bg-black/20">
       <div className="container mx-auto px-6">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-16 text-center"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4 flex items-center gap-3">
@@ -40,12 +41,17 @@ const Skills = () => {
                 <h3 className="text-xl font-bold mb-6 text-white">{category.title}</h3>
                 
                 <ul className="space-y-3">
-                  {category.skills.map((skill, idx) => (
-                    <li key={idx} className="flex items-center gap-3 text-gray-400 group-hover:text-gray-300 transition-colors">
-                      <span className="w-1.5 h-1.5 bg-emerald-accent rounded-full"></span>
-                      {skill}
-                    </li>
-                  ))}
+                  {category.skills.map((skill, idx) => {
+                    const SkillIcon = skill.icon;
+                    return (
+                      <li key={idx} className="flex items-center gap-3 text-gray-400 group-hover:text-gray-300 transition-colors">
+                        <span className="p-1.5 bg-emerald-accent/10 rounded-md text-emerald-accent">
+                          <SkillIcon className="w-4 h-4" />
+                        </span>
+                        {skill.name}
+                      </li>
+                    );
+                  })}
                 </ul>
               </motion.article>
             );

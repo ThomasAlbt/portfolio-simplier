@@ -6,10 +6,10 @@ const About = () => {
     <section id="about" className="py-20 relative">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
         >
           <div>
@@ -19,22 +19,22 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                Je suis <strong className="text-white">Thomas Albert</strong>, un développeur Fullstack guidé par la performance et la précision. Mon approche du développement est façonnée par ma passion pour l'optimisation, que ce soit dans le code ou sur un circuit de F1.
+                Je suis <strong className="text-white">Thomas Albert</strong>, développeur Fullstack passionné, toujours en quête de performance et de précision. Mon approche du développement est clairement influencée par mon goût pour l’optimisation — que ce soit dans une base de code… ou sur un circuit de F1.
               </p>
               <p>
-                Autodidacte rigoureux, j'ai construit ma stack technique autour de <span className="text-emerald-accent font-medium">React</span> et <span className="text-emerald-accent font-medium">Node.js</span>, avec une attention particulière portée à la sécurité et à l'architecture logicielle.
+                Autodidacte déterminé, j’ai construit ma stack autour de <span className="text-emerald-accent font-medium">React</span> et <span className="text-emerald-accent font-medium">Node.js</span>, avec un vrai souci de sécurité et d’architecture propre. J’aime aller droit au but, trouver des solutions efficaces et pousser mes projets un cran plus loin à chaque itération.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
                 <article className="bg-forest-green/50 p-4 rounded-xl border border-emerald-accent/10 hover:border-emerald-accent/30 transition-colors">
                   <Flag className="text-emerald-accent mb-2 w-6 h-6" />
                   <h4 className="font-bold text-white mb-1">Passion F1</h4>
-                  <p className="text-sm text-gray-400">Fan de Ferrari & Data Viz</p>
+                  <p className="text-sm text-gray-400">Ferrari Fan • Toujours à la recherche du meilleur temps</p>
                 </article>
                 <article className="bg-forest-green/50 p-4 rounded-xl border border-emerald-accent/10 hover:border-emerald-accent/30 transition-colors">
                   <Cpu className="text-lime-accent mb-2 w-6 h-6" />
                   <h4 className="font-bold text-white mb-1">Optimisation</h4>
-                  <p className="text-sm text-gray-400">Strategy & RPG Games</p>
+                  <p className="text-sm text-gray-400">TFT, FFXIV & Architecture propre</p>
                 </article>
               </div>
             </div>
@@ -52,7 +52,8 @@ const About = () => {
                 {[
                   { title: "Clean Code", desc: "Architecture lisible et maintenable." },
                   { title: "Sécurité", desc: "Protection des données et best practices." },
-                  { title: "Performance", desc: "Optimisation des ressources et du rendu." }
+                  { title: "Performance", desc: "Optimisation des ressources et du rendu." },
+                  { title: "Créativité", desc: "Innovation et recherche constante." },
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-4">
                     <div className="w-8 h-8 rounded-full bg-emerald-accent/10 flex items-center justify-center shrink-0 mt-1">

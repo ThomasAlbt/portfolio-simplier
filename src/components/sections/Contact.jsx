@@ -7,9 +7,10 @@ const Contact = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               LET'S <span className="text-emerald-accent">TALK</span>
@@ -27,7 +28,7 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-gray-500 font-bold uppercase">Email</p>
                   <a href="mailto:contact@thomasalbert.dev" className="text-white hover:text-emerald-accent transition-colors">
-                    contact@thomasalbert.dev
+                    thomas.albert.jv@gmail.com
                   </a>
                 </div>
               </div>
@@ -90,8 +91,11 @@ const Contact = () => {
         </div>
 
         <footer className="border-t border-white/5 mt-20 pt-8 text-center">
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-sm mb-2">
             &copy; {new Date().getFullYear()} Thomas Albert. Built with React & Tailwind.
+          </p>
+          <p className="text-[10px] text-white/10 font-mono select-none hover:text-emerald-accent/50 transition-colors duration-300">
+            ↑ ↑ ↓ ↓ ← → ← → B A
           </p>
         </footer>
       </div>

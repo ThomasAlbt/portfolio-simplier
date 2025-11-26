@@ -22,9 +22,9 @@ const ProjectCard = ({ project, index, onOpenModal }) => {
           <a href={project.github} className="p-2 text-gray-400 hover:text-white transition-colors">
             <Github className="w-5 h-5" />
           </a>
-          <a href={project.link} className="p-2 text-gray-400 hover:text-white transition-colors">
+          {/* <a href={project.link} className="p-2 text-gray-400 hover:text-white transition-colors">
             <ExternalLink className="w-5 h-5" />
-          </a>
+          </a> */}
         </div>
       </header>
 

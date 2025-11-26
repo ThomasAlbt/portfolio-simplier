@@ -42,38 +42,44 @@ const InteractiveBackground = () => {
            }}>
       </div>
 
-      {/* Floating Orbs (Automatic Movement) */}
-      <motion.div 
-        className="absolute top-[10%] left-[10%] w-[40vw] h-[40vw] bg-emerald-accent/10 rounded-full blur-[100px]"
-        animate={{
-          x: [0, 50, -50, 0],
-          y: [0, -50, 50, 0],
-          scale: [1, 1.1, 0.9, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-        // style={{ y: y1 }} // Removed parallax
-
-      />
-      
-      <motion.div 
-        className="absolute bottom-[10%] right-[10%] w-[50vw] h-[50vw] bg-lime-accent/5 rounded-full blur-[120px]"
-        animate={{
-          x: [0, -70, 30, 0],
-          y: [0, 40, -60, 0],
-          scale: [1, 0.9, 1.1, 1],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-        // style={{ y: y2 }} // Removed parallax
-
-      />
+      {/* Floating Orbs (Automatic Movement) - Desktop Only */}
+      {!isMobile ? (
+        <>
+          <motion.div 
+            className="absolute top-[10%] left-[10%] w-[40vw] h-[40vw] bg-emerald-accent/10 rounded-full blur-[100px]"
+            animate={{
+              x: [0, 50, -50, 0],
+              y: [0, -50, 50, 0],
+              scale: [1, 1.1, 0.9, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+          
+          <motion.div 
+            className="absolute bottom-[10%] right-[10%] w-[50vw] h-[50vw] bg-lime-accent/5 rounded-full blur-[120px]"
+            animate={{
+              x: [0, -70, 30, 0],
+              y: [0, 40, -60, 0],
+              scale: [1, 0.9, 1.1, 1],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+        </>
+      ) : (
+        /* Mobile Static Background - Cheaper rendering */
+        <>
+          <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-br from-emerald-accent/5 to-transparent opacity-50" />
+          <div className="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-tl from-lime-accent/5 to-transparent opacity-50" />
+        </>
+      )}
 
       {/* Mouse Follower (PC Only) */}
       {!isMobile && (
