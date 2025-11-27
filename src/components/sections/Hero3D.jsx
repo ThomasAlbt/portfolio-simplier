@@ -15,9 +15,9 @@ const GeometricShape = ({ shape }) => {
   const getGeometry = () => {
     switch (shape) {
       case 'torus':
-        return <torusGeometry args={[1, 0.4, 16, 100]} />;
+        return <torusGeometry args={[1, 0.4, 12, 48]} />;
       case 'cube':
-        return <boxGeometry args={[1.5, 1.5, 1.5, 5, 5, 5]} />;
+        return <boxGeometry args={[1.5, 1.5, 1.5]} />;
       case 'icosahedron':
         return <icosahedronGeometry args={[1, 1]} />;
       default:
@@ -52,7 +52,7 @@ const Hero3D = ({ shape = 'icosahedron' }) => {
 
   return (
     <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
-      <Canvas>
+      <Canvas dpr={[1, 2]} gl={{ powerPreference: "high-performance", antialias: true }}>
         <PerspectiveCamera makeDefault position={[0, 0, 5]} />
         <ambientLight intensity={0.5} />
         <GeometricShape shape={shape} />

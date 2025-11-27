@@ -1,11 +1,8 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const InteractiveBackground = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
-  // Removed scroll-based transforms to prevent glitching
-
 
   useEffect(() => {
     const checkMobile = () => {
@@ -15,16 +12,7 @@ const InteractiveBackground = () => {
     checkMobile();
     window.addEventListener('resize', checkMobile);
     
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', checkMobile);
     };
   }, []);
@@ -78,30 +66,6 @@ const InteractiveBackground = () => {
         <>
           <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-br from-emerald-accent/5 to-transparent opacity-50" />
           <div className="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-tl from-lime-accent/5 to-transparent opacity-50" />
-        </>
-      )}
-
-      {/* Mouse Follower (PC Only) */}
-      {!isMobile && (
-        <>
-          {/* Small Dot */}
-          <motion.div
-            className="fixed top-0 left-0 w-3 h-3 bg-emerald-accent rounded-full z-50 mix-blend-screen pointer-events-none"
-            animate={{
-              x: mousePosition.x - 6,
-              y: mousePosition.y - 6,
-            }}
-            transition={{ type: 'tween', ease: 'linear', duration: 0 }}
-          />
-          {/* Larger Glow */}
-          <motion.div
-            className="fixed top-0 left-0 w-8 h-8 border border-emerald-accent/30 rounded-full z-50 pointer-events-none"
-            animate={{
-              x: mousePosition.x - 16,
-              y: mousePosition.y - 16,
-            }}
-            transition={{ type: 'spring', damping: 20, stiffness: 200, mass: 0.5 }}
-          />
         </>
       )}
     </div>
