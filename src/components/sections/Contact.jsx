@@ -104,7 +104,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 font-bold uppercase">Localisation</p>
-                  <p className="text-white">France</p>
+                  <p className="text-white">Barr 67140, France</p>
                 </div>
               </div>
             </address>
@@ -212,7 +212,7 @@ const Contact = () => {
           <p className="text-gray-500 text-sm mb-2">
             &copy; {new Date().getFullYear()} Thomas Albert. Built with React & Tailwind.
           </p>
-          <p className="text-[10px] text-white/10 font-mono select-none hover:text-emerald-accent/50 transition-colors duration-300">
+          <p className="text-[24px] text-white/10 font-mono select-none hover:text-emerald-accent/50 transition-colors duration-300">
             ↑ ↑ ↓ ↓ ← → ← → B A
           </p>
         </footer>
