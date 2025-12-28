@@ -18,6 +18,7 @@ export const skillCategories = [
     skills: [
       { name: "PHP 8", icon: Server },
       { name: "MySQL", icon: Database },
+      { name: "Supabase", icon: Database },
       { name: "REST APIs", icon: Globe },
       { name: "Node.js Basics", icon: Cpu },
       { name: "MVC Architecture", icon: Layers }
