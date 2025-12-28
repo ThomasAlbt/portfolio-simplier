@@ -63,13 +63,13 @@ const ProjectModal = ({ project, onClose }) => {
               <Github className="w-5 h-5" />
               Code Source
             </a>
-            <a 
+            {/* <a 
               href={project.link} 
               className="flex items-center gap-2 px-6 py-3 bg-emerald-accent hover:bg-emerald-400 text-deep-green rounded-lg transition-colors font-bold"
             >
               <ExternalLink className="w-5 h-5" />
               Voir le projet
-            </a>
+            </a> */}
           </div>
         </div>
       </motion.div>
